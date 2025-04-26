@@ -70,9 +70,12 @@ def main(image=None, video=None, audio=None, desc=None, location=None, radius=80
         click.echo(f"\n=== 👷  {place_type.replace('_',' ').title()}s Nearby ===")
         if not pros:
             click.echo("No matching contractors found.")
+
         for p in pros:
-            click.echo(f"• {p['name']}  ⭐ {p['rating']}  – {p['vicinity']}")
+            click.echo(f"• {p['name']}  ⭐ {p['rating']}  – {p['vicinity']} ({p['distance_km']:.2f} km away)")
             click.echo(f"  {p['maps_url']}")
+
+            
 
 if __name__ == "__main__":
     main()

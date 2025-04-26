@@ -4,7 +4,7 @@ Maps PRO lookup (Google Places Nearby Search).
 from __future__ import annotations
 import os, re, requests
 from typing import Dict, List, Tuple
-
+import math
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -41,7 +41,19 @@ def parse_location_string(s: str) -> Tuple[float, float]:
     return lat, lng
 
 
-# ---------- 4. nearby contractors ----------
+
+
+# ---------- 4. nearby contractors with distance ----------
+def haversine(lat1, lon1, lat2, lon2):
+    """Calculate the great-circle distance between two points (in km)."""
+    R = 6371  # Earth radius in km
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = (math.sin(dlat/2)**2 +
+         math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon/2)**2)
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+    return R * c
+
 def find_nearby_pros(
     place_type: str,
     lat: float,
@@ -59,12 +71,17 @@ def find_nearby_pros(
     res = requests.get(url, params=params, timeout=5).json().get("results", [])
     res.sort(key=lambda x: x.get("rating", 0), reverse=True)
     picks = res[: top_k]
-    return [
-        {
+    out = []
+    for p in picks:
+        pro_lat = p["geometry"]["location"]["lat"]
+        pro_lng = p["geometry"]["location"]["lng"]
+        distance_km = haversine(lat, lng, pro_lat, pro_lng)
+        out.append({
             "name": p["name"],
             "rating": p.get("rating", "—"),
             "vicinity": p.get("vicinity"),
             "maps_url": f"https://www.google.com/maps/place/?q=place_id:{p['place_id']}",
-        }
-        for p in picks
-    ]
+            "distance_km": distance_km,
+        })
+    return out
+
