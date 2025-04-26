@@ -5,6 +5,9 @@ import mimetypes
 from pathlib import Path
 from typing import Dict, Any, List, Union
 
+import google.generativeai as genai
+from io import BytesIO
+
 from dotenv import load_dotenv
 from PIL import Image
 import google.generativeai as genai
@@ -15,7 +18,7 @@ assert API_KEY, "Set GOOGLE_API_KEY in your .env!"
 
 # Configure the client
 genai.configure(api_key=API_KEY)
-MODEL_NAME = "gemini-1.5-flash"  # Updated to current model
+MODEL_NAME = "gemini-1.5-pro"  # Updated to current model
 # Alternatively: MODEL_NAME = "gemini-1.5-pro"
 
 def process_image(image_path: Path) -> Dict[str, Any]:
@@ -128,3 +131,34 @@ For the provided media and problem description:
             "error": str(e),
             "parts_needed": []
         }
+    
+
+
+def generate_step_visual(step_description: str, idx: int) -> str:
+    """
+    Generate an image illustrating the repair step using Gemini 2.0 Flash Experimental.
+    Save the image locally and return the path.
+    """
+    try:
+        model = genai.GenerativeModel(model_name="gemini-2.0-flash-exp-image-generation")
+
+        response = model.generate_content(
+            contents=f"Create a simple hand-drawn instructional sketch for this repair step: {step_description}",
+            generation_config={
+                "response_modalities": ["TEXT", "IMAGE"]  # THIS is correct!
+            }
+        )
+
+        for part in response.parts:
+            if hasattr(part, "inline_data") and part.inline_data is not None:
+                img = Image.open(BytesIO(part.inline_data.data))
+                os.makedirs("outputs", exist_ok=True)
+                save_path = f"outputs/step_{idx}.png"
+                img.save(save_path)
+                return save_path
+
+        return None
+
+    except Exception as e:
+        print(f"Image generation failed for step {idx}: {str(e)}")
+        return None
