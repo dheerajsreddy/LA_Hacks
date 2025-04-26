@@ -6,6 +6,7 @@ from utils.gemini_client import diagnose, generate_step_visual
 from utils.pro_finder   import choose_place_type, parse_location_string, find_nearby_pros
 from utils.auto_loc     import get_location
 from utils.pro_finder   import geocode        # reuse same helper
+from utils.product_finder import search_products    # 🆕 (new import added)
 
 @click.command()
 @click.option("--image", "-i", type=click.Path(exists=True), help="Image file")
@@ -70,12 +71,24 @@ def main(image=None, video=None, audio=None, desc=None, location=None, radius=80
         click.echo(f"\n=== 👷  {place_type.replace('_',' ').title()}s Nearby ===")
         if not pros:
             click.echo("No matching contractors found.")
-
         for p in pros:
             click.echo(f"• {p['name']}  ⭐ {p['rating']}  – {p['vicinity']} ({p['distance_km']:.2f} km away)")
             click.echo(f"  {p['maps_url']}")
 
-            
+    # ---------- find parts if needed ----------
+    if result.get("parts_needed"):
+        click.echo("\n=== 🛒 PARTS SHOPPING ===")
+        for part in result["parts_needed"]:
+            click.echo(f"\n🔹 Looking for: {part}")
+            found = search_products(part, lat, lng)  # 🛠 changed function to pass lat,lng
+            if not found:
+                click.echo("No products found.")
+                continue
+            for p in found:
+                click.echo(f"• {p['title']}")
+                click.echo(f"  💵 {p['price']}    ⭐ {p['rating']}    🛒 {p['store']}")
+                click.echo(f"  📍 {p['distance_km']} km away")
+                click.echo(f"  🔗 {p['link']}\n")
 
 if __name__ == "__main__":
     main()
