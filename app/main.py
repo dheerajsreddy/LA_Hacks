@@ -10,7 +10,7 @@ from utils.gemini_client import diagnose, generate_step_visual
 @click.option("--audio", "-a", type=click.Path(exists=True), help="Path to an audio file (mp3/wav/ogg/...)")
 @click.option("--desc", "-d", help="Short plain-text description of the problem")
 def main(image: str = None, video: str = None, audio: str = None, desc: str = None):
-    """🛠️ Multimodal Repair Assistant powered by Gemini 2.5 Pro + 2.0 Flash Image Gen."""
+    """🛠️ Multimodal Repair Assistant powered by Gemini 2.5 Flash + 2.0 Flash Image Gen."""
 
     if not any([image, video, audio, desc]):
         click.secho("❌ Error: Provide at least one input (image, video, audio, or description).", fg="red")
@@ -18,16 +18,14 @@ def main(image: str = None, video: str = None, audio: str = None, desc: str = No
 
     media_files = {}
     if image:
-        media_files["image"] = Path(image)
+        media_files['image'] = Path(image)
     if video:
-        media_files["video"] = Path(video)
+        media_files['video'] = Path(video)
     if audio:
-        media_files["audio"] = Path(audio)
+        media_files['audio'] = Path(audio)
 
-    # Diagnose using Gemini 2.5
     result = diagnose(media_files, desc)
 
-    # Output Diagnosis
     print("\n=== ✅ SUMMARY ===")
     print(result.get("summary", "No summary available"))
 
@@ -39,7 +37,6 @@ def main(image: str = None, video: str = None, audio: str = None, desc: str = No
     else:
         print("No repair steps provided.")
 
-    # Try to generate simple visuals for each step
     print("\n=== 🎨 STEP VISUALS ===")
     if steps:
         for idx, step in enumerate(steps, 1):
