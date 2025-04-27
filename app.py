@@ -1,136 +1,104 @@
 import streamlit as st
 import os
-from dotenv import load_dotenv
-import requests
-import json
+from pathlib import Path
+from workflow_orchestrator import run_workflow
 from PIL import Image
 import io
-import base64
-import pandas as pd
-from workflow_orchestrator import run_workflow
-from interior_design_db import InteriorDesignDB
-from pathlib import Path
-
-# Load environment variables
-load_dotenv()
+import glob
 
 # Set page config
 st.set_page_config(
-    page_title="Renovation Workflow",
+    page_title="Renovation Assistant",
     page_icon="🏠",
     layout="wide"
 )
 
-# Initialize session state
-if 'workflow_results' not in st.session_state:
-    st.session_state.workflow_results = None
-if 'current_step' not in st.session_state:
-    st.session_state.current_step = 0
-if 'design_query_id' not in st.session_state:
-    st.session_state.design_query_id = None
+# Custom CSS
+st.markdown("""
+    <style>
+    .main {
+        padding: 2rem;
+    }
+    .stButton>button {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .stButton>button:hover {
+        background-color: #45a049;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
-# Helper to save uploaded image to user_input_images/room.png
-USER_IMAGE_DIR = Path(os.getenv("USER_IMAGE_DIR", "user_input_images"))
-USER_IMAGE_DIR.mkdir(parents=True, exist_ok=True)
-USER_IMAGE_PATH = USER_IMAGE_DIR / "room.png"
+# Title and description
+st.title("🏠 Renovation Assistant")
+st.markdown("""
+    Upload a room image and describe your renovation needs. Our AI will help you find products and contractors!
+""")
 
-# Helper to get generated image path from DB
-def get_generated_image_path(design_query_id):
-    db = InteriorDesignDB()
-    details = db.get_query_details(design_query_id)
-    generated_images = details.get('generated_images', [])
-    if generated_images:
-        # generated_image_path is the 4th column (index 4)
-        return generated_images[-1][4]
-    return None
+# Create two columns for the layout
+col1, col2 = st.columns(2)
 
-def display_home_depot_products(products):
-    st.subheader("🏪 Home Depot Products")
-    if not products:
-        st.info("No products found.")
-        return
+with col1:
+    st.subheader("Upload Room Image")
+    uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpg", "jpeg"])
     
-    # Create columns for product display
-    cols = st.columns(3)
-    for idx, product in enumerate(products):
-        with cols[idx % 3]:
-            st.image(product.get('image_url', ''), use_column_width=True)
-            st.write(f"**{product.get('name', 'N/A')}**")
-            st.write(f"Price: ${product.get('price', 'N/A')}")
-            st.write(f"Rating: {product.get('rating', 'N/A')} ⭐")
-            st.write(f"[View Product]({product.get('url', '#')})")
+    if uploaded_file is not None:
+        # Display the uploaded image
+        image = Image.open(uploaded_file)
+        st.image(image, caption="Uploaded Room Image", use_column_width=True)
+        
+        # Save the image to the required path
+        BASE_DIR = Path(r"C:\Users\meteh\OneDrive\Desktop\LA_Hacks")
+        ROOM_IMAGE_PATH = BASE_DIR / "user_input_images" / "room.png"
+        ROOM_IMAGE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        
+        # Save the image
+        image.save(ROOM_IMAGE_PATH)
 
-def display_contractors(contractors):
-    st.subheader("👷 Contractors")
-    if not contractors:
-        st.info("No contractors found.")
-        return
-    
-    # Create a DataFrame for better display
-    df = pd.DataFrame(contractors)
-    st.dataframe(
-        df[['name', 'address', 'rating', 'phone']],
-        column_config={
-            "name": "Name",
-            "address": "Address",
-            "rating": "Rating",
-            "phone": "Phone"
-        },
-        hide_index=True
+with col2:
+    st.subheader("Describe Your Needs")
+    user_query = st.text_area(
+        "What kind of renovation or products are you looking for?",
+        placeholder="Example: I need a plush, dark grey carpet suitable for a bedroom.",
+        height=150
     )
 
-def display_generated_image(image_data):
-    st.subheader("🎨 Generated Room Design")
-    if not image_data:
-        st.info("No image generated yet.")
-        return
-    
-    # Display the generated image
-    st.image(image_data, use_column_width=True)
-
-def main():
-    st.title("🏠 Renovation Workflow")
-    st.write("Upload a room image and describe your renovation project. We'll help you visualize your new space!")
-
-    # User input form
-    with st.form("renovation_form"):
-        user_query = st.text_area(
-            "Describe your renovation project",
-            placeholder="e.g., I want to renovate my kitchen with modern appliances and a minimalist design..."
-        )
-        uploaded_image = st.file_uploader("Upload a room image", type=["png", "jpg", "jpeg"])
-        submitted = st.form_submit_button("Start Workflow")
-
-    if submitted:
-        if not user_query:
-            st.error("Please describe your renovation project.")
-            return
-        if not uploaded_image:
-            st.error("Please upload a room image.")
-            return
-        # Save uploaded image
-        image_bytes = uploaded_image.read()
-        USER_IMAGE_PATH.write_bytes(image_bytes)
-        with st.spinner("Processing your request..."):
+# Run button
+if st.button("Start Renovation Analysis"):
+    if uploaded_file is None:
+        st.error("Please upload a room image first!")
+    elif not user_query:
+        st.error("Please describe your renovation needs!")
+    else:
+        with st.spinner("Analyzing your renovation needs..."):
             try:
-                # Run the workflow with the uploaded image
-                results = run_workflow(user_query, room_image_path=USER_IMAGE_PATH)
-                st.session_state.workflow_results = results
-                st.session_state.current_step = 1
-                st.session_state.design_query_id = results.get('design_query_id')
-                st.success("Workflow completed successfully!")
+                # Run the workflow
+                run_workflow(user_query)
+                st.success("Analysis complete!")
+                
+                # Find the most recent image in the images folder
+                images_dir = BASE_DIR / "images"
+                if images_dir.exists():
+                    # Get all image files
+                    image_files = glob.glob(str(images_dir / "*.png"))
+                    if image_files:
+                        # Sort by modification time (newest first)
+                        latest_image = max(image_files, key=os.path.getmtime)
+                        st.subheader("Generated Room Design")
+                        st.image(latest_image, caption="Generated Room Design", use_column_width=True)
+                    else:
+                        st.warning("No generated images found in the images folder.")
+                else:
+                    st.warning("Images folder not found. Please check the console for results.")
+                    
             except Exception as e:
                 st.error(f"An error occurred: {str(e)}")
-                return
 
-    # Display generated image if available
-    if st.session_state.design_query_id:
-        st.subheader("🎨 Generated Room Design")
-        generated_image_path = get_generated_image_path(st.session_state.design_query_id)
-        if generated_image_path and Path(generated_image_path).is_file():
-            st.image(generated_image_path, use_column_width=True)
-        else:
-            st.info("No image generated yet.")
-
-if __name__ == "__main__":
-    main() 
+# Footer
+st.markdown("---")
+st.markdown("Built with ❤️ by LA Hacks Team") 
