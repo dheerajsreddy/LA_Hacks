@@ -3,6 +3,7 @@ import requests
 import google.generativeai as genai
 import json
 import sys
+from pathlib import Path
 from dotenv import load_dotenv
 
 # --- Configuration ---
@@ -65,10 +66,7 @@ def geocode_location(api_key: str, address: str) -> tuple[float, float] | None:
 # --- Gemini Function (Same as before) ---
 
 def get_search_term_from_gemini(user_request: str) -> str | None:
-    """
-    Uses Gemini to determine the best search term for Google Places
-    based on the user's natural language request.
-    """
+    """Convert natural language request to contractor search term."""
     print(f"\n[Gemini] Asking Gemini for search term based on: '{user_request}'")
     try:
         genai.configure(api_key=GEMINI_API_KEY)
@@ -102,9 +100,7 @@ def get_search_term_from_gemini(user_request: str) -> str | None:
 # --- Google Places Function (Same as before) ---
 
 def find_contractors_google_places(search_term: str, latitude: float, longitude: float, radius: int) -> list | None:
-    """
-    Searches Google Places API (Nearby Search) for businesses matching the search term.
-    """
+    """Search for contractors using Google Places API."""
     print(f"\n[Places API] Searching for '{search_term}' near ({latitude}, {longitude}) within {radius} meters...")
     nearby_search_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
 
@@ -149,70 +145,28 @@ def find_contractors_google_places(search_term: str, latitude: float, longitude:
 # --- Main Execution ---
 
 if __name__ == "__main__":
-    # Example user input
-    user_natural_language_request = "I need someone to install a new chandelier in my living room."
-    # user_natural_language_request = "Help me find someone to fix a leaky faucet in the kitchen."
-    # user_natural_language_request = "Looking for a company to repaint my bedroom walls."
-
-    print("--- Starting Contractor Search Test ---")
-
-    # 1. Get Location from User
-    user_location_input = input("Please enter your location (e.g., '1600 Amphitheatre Pkwy, Mountain View, CA', 'Chicago, IL', or '90210'): ")
-    if not user_location_input:
-        print("Location input cannot be empty. Exiting.")
+    # Example usage
+    user_query = "I need someone to install a new chandelier in my living room."
+    output_dir = Path("contractors_output")
+    output_dir.mkdir(exist_ok=True)
+    
+    search_term = get_search_term_from_gemini(user_query)
+    if not search_term:
         sys.exit(1)
-
-    # 2. Geocode the Location
-    coordinates = geocode_location(PLACES_API_KEY, user_location_input)
-    if not coordinates:
-        print("Could not determine coordinates for the provided location. Exiting.")
-        sys.exit(1)
-
-    target_latitude, target_longitude = coordinates
-
-    print("\n---------------------------------------")
-    print(f"User Request: \"{user_natural_language_request}\"")
-    print(f"Using Location: {user_location_input} (Lat={target_latitude:.4f}, Lon={target_longitude:.4f})")
-    print(f"Search Radius: {SEARCH_RADIUS_METERS} meters")
-    print("---------------------------------------")
-
-    # 3. Get search term from Gemini
-    derived_search_term = get_search_term_from_gemini(user_natural_language_request)
-
-    if derived_search_term:
-        # 4. Search Google Places using the derived term and geocoded location
-        contractors = find_contractors_google_places(
-            search_term=derived_search_term,
-            latitude=target_latitude,
-            longitude=target_longitude,
-            radius=SEARCH_RADIUS_METERS
-        )
-
-        # 5. Print results
-        if contractors is not None:
-            print("\n--- Contractor Results ---")
-            if not contractors:
-                print("No contractors found matching the criteria.")
-            else:
-                # Sort results by rating (descending), putting places with no rating last
-                contractors.sort(key=lambda x: x.get('rating', -1), reverse=True)
-
-                for i, place in enumerate(contractors):
-                    name = place.get('name', 'N/A')
-                    address = place.get('vicinity', 'N/A')
-                    rating = place.get('rating', 'N/A')
-                    user_ratings_total = place.get('user_ratings_total', 'N/A')
-                    place_id = place.get('place_id', 'N/A') # Useful for getting more details later
-
-                    print(f"\n{i+1}. Name: {name}")
-                    print(f"   Address: {address}")
-                    print(f"   Rating: {rating} ({user_ratings_total} reviews)")
-                    print(f"   Place ID: {place_id}") # Displaying Place ID
-            print("-------------------------")
-        else:
-            print("\n[Main] Failed to get contractor results from Google Places.")
-    else:
-        print("\n[Main] Failed to get search term from Gemini. Cannot proceed.")
+        
+    # For this example, we'll use a default location
+    default_location = "Los Angeles, CA"
+    contractors = find_contractors_google_places(
+        search_term=search_term,
+        latitude=34.0522,  # Los Angeles coordinates
+        longitude=-118.2437,
+        radius=15 * 1609  # 15 miles in meters
+    )
+    
+    if contractors:
+        # Save contractors to JSON
+        with open(output_dir / "contractors.json", 'w') as f:
+            json.dump(contractors, f, indent=4)
 
     print("\n--- Test Finished ---")
     print("🚨 REMINDER: Regenerate your API keys if you haven't already! 🚨")

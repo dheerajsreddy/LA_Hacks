@@ -3,7 +3,8 @@ import requests
 import google.generativeai as genai
 import json
 import sys
-import re # For creating safe filenames
+import re
+from pathlib import Path
 from dotenv import load_dotenv
 
 # --- Configuration ---
@@ -20,9 +21,8 @@ if not GEMINI_API_KEY or not SERPAPI_API_KEY:
 OUTPUT_DIR = "homedepot_output"
 MAX_PRODUCTS_TO_PROCESS = 10 # Limit processing to manage costs/time
 
-# --- Gemini Text Function (Same as before) ---
 def get_search_query_from_gemini(user_request: str) -> str | None:
-    # ... (Keep the function identical to the previous version) ...
+    """Convert natural language request to Home Depot search query."""
     print(f"\n[Gemini Text] Asking Gemini for search query based on: '{user_request}'")
     try:
         genai.configure(api_key=GEMINI_API_KEY)
@@ -47,9 +47,8 @@ def get_search_query_from_gemini(user_request: str) -> str | None:
              print("Please check if your Gemini API key is correct and enabled.")
         return None
 
-# --- SerpApi Home Depot Search Function (Same as before) ---
 def search_home_depot_serpapi(api_key: str, query: str) -> list | None:
-    # ... (Keep the function identical to the previous version) ...
+    """Search Home Depot products using SerpAPI."""
     print(f"\n[SerpApi] Searching Home Depot for: '{query}'")
     params = { "engine": "home_depot", "q": query, "api_key": api_key }
     api_endpoint = "https://serpapi.com/search.json"
@@ -85,9 +84,8 @@ def search_home_depot_serpapi(api_key: str, query: str) -> list | None:
         print(f"[SerpApi] An unexpected error occurred: {e}")
         return None
 
-# --- Image Download Function (Same as before) ---
-def download_image(url: str, save_path: str) -> bool:
-    # ... (Keep the function identical to the previous version) ...
+def download_image(url: str, save_path: Path) -> bool:
+    """Download an image from URL and save it to the specified path."""
     if not url or not isinstance(url, str) or not url.startswith(('http://', 'https://')):
          print(f"[Image] Invalid or missing URL provided: '{url}'. Skipping download.")
          return False
@@ -113,45 +111,94 @@ def download_image(url: str, save_path: str) -> bool:
          print(f"[Image] Error saving file {save_path}: {e}")
          return False
 
-# --- Helper to Create Safe Filenames (Same as before) ---
 def create_safe_filename(text: str, suffix: str = "") -> str:
-    # ... (Keep the function identical to the previous version) ...
+    """Create a safe filename from text."""
     safe_text = re.sub(r'[<>:"/\\|?*]', '_', text)
     safe_text = re.sub(r'\s+', '_', safe_text)
     safe_text = safe_text[:100]
     return f"{safe_text}{suffix}"
 
-# --- Main Execution ---
+def extract_image_url(product: dict) -> str | None:
+    """Extract the best available image URL from a product."""
+    # Try thumbnails first (often highest quality)
+    thumbnails_list = product.get('thumbnails')
+    if isinstance(thumbnails_list, list) and len(thumbnails_list) > 0:
+        # Check if the first item is also a list (nested structure)
+        inner_list = thumbnails_list[0]
+        if isinstance(inner_list, list) and len(inner_list) > 0:
+            # Try to get the last URL (often highest resolution)
+            image_url = inner_list[-1]
+            print(f"[Image] Found URL in nested 'thumbnails' list: {image_url}")
+            return image_url
+        elif isinstance(thumbnails_list[0], str):
+            image_url = thumbnails_list[0]
+            print(f"[Image] Found URL directly in 'thumbnails' list: {image_url}")
+            return image_url
+
+    # Fallback to thumbnail
+    image_url = product.get('thumbnail')
+    if image_url:
+        print(f"[Image] Found URL in 'thumbnail' field: {image_url}")
+        return image_url
+
+    # Final fallback to image
+    image_url = product.get('image')
+    if image_url:
+        print(f"[Image] Found URL in 'image' field: {image_url}")
+        return image_url
+
+    return None
+
+def download_product_images(products: list, output_dir: Path) -> list:
+    """Download images for all products and return list of downloaded image paths."""
+    downloaded_images = []
+    for i, product in enumerate(products):
+        # Extract image URL using the same logic as the original code
+        image_url = extract_image_url(product)
+        if not image_url:
+            print(f"[Image] No valid image URL could be extracted for product {i+1}")
+            continue
+
+        # Create a safe filename for the image
+        title = product.get('title', f'product_{i+1}')
+        safe_title_part = create_safe_filename(title)
+        
+        # Handle file extension
+        file_ext = os.path.splitext(image_url)[1]
+        if '?' in file_ext: 
+            file_ext = file_ext.split('?')[0]
+        if not file_ext or len(file_ext) > 5 or '.' not in file_ext:
+            file_ext = ".jpg"  # Default to jpg if extension looks weird/missing
+            
+        image_filename = f"product_{i+1}_{safe_title_part}{file_ext}"
+        image_path = output_dir / image_filename
+
+        # Download the image
+        if download_image(image_url, image_path):
+            downloaded_images.append(image_path)
+            print(f"Downloaded image for {title} to {image_path}")
+        else:
+            print(f"Failed to download image for {title}")
+
+    return downloaded_images
 
 if __name__ == "__main__":
-    # --- Example User Input ---
-    user_natural_language_request = "I need a plush, dark grey carpet suitable for a bedroom."
-    # user_natural_language_request = "simple white ceramic floor tile 12x12"
-    # user_natural_language_request = "Lillith Navy Blue Mid Century Modern Chair" # Example from JSON
-    # --- ---
-
-    print("--- Starting Home Depot Product Search & Save Test ---")
-    print(f"User Request: \"{user_natural_language_request}\"")
-
-    # 1. Create output directory if it doesn't exist
-    if not os.path.exists(OUTPUT_DIR):
-        print(f"Creating directory: {OUTPUT_DIR}")
-        os.makedirs(OUTPUT_DIR)
-
-    # 2. Get search query from Gemini Text
-    search_query = get_search_query_from_gemini(user_natural_language_request)
+    # Example usage
+    user_query = "I need a plush, dark grey carpet suitable for a bedroom."
+    output_dir = Path(OUTPUT_DIR)
+    output_dir.mkdir(exist_ok=True)
+    
+    search_query = get_search_query_from_gemini(user_query)
     if not search_query:
-        print("\n[Main] Failed to get search query from Gemini. Cannot proceed.")
         sys.exit(1)
-
-    # 3. Search Home Depot via SerpApi
+        
     products = search_home_depot_serpapi(SERPAPI_API_KEY, search_query)
-    if products is None:
-        print("\n[Main] Failed to get products from SerpApi. Cannot proceed.")
-        sys.exit(1)
     if not products:
-        print("\n[Main] No products found by SerpApi.")
-        sys.exit(0)
+        sys.exit(1)
+        
+    # Save products to JSON
+    with open(output_dir / "products.json", 'w') as f:
+        json.dump(products, f, indent=4)
 
     # 4. Process Products: Save Info and Download Images
     print(f"\n--- Processing up to {MAX_PRODUCTS_TO_PROCESS} Products ---")
@@ -222,10 +269,10 @@ if __name__ == "__main__":
             if not file_ext or len(file_ext) > 5 or '.' not in file_ext:
                  file_ext = ".jpg" # Default to jpg if extension looks weird/missing
             image_filename = f"product_{i+1}_{safe_title_part}{file_ext}"
-            save_path = os.path.join(OUTPUT_DIR, image_filename)
+            save_path = output_dir / image_filename
 
             if download_image(image_url, save_path):
-                product_info["downloaded_image_path"] = save_path
+                product_info["downloaded_image_path"] = str(save_path)
                 downloaded_image_count += 1
         else:
              print("[Image] No valid image URL could be extracted for this product.")
@@ -234,7 +281,7 @@ if __name__ == "__main__":
 
 
     # 5. Save Product Information to JSON file
-    info_filename = os.path.join(OUTPUT_DIR, "product_info.json")
+    info_filename = output_dir / "product_info.json"
     print(f"\n--- Saving product information to {info_filename} ---")
     try:
         with open(info_filename, 'w') as f:
@@ -249,7 +296,7 @@ if __name__ == "__main__":
     print(f"Total products processed: {len(processed_products_info)}")
     print(f"Total images successfully downloaded: {downloaded_image_count}")
     print(f"Product info saved to: {info_filename}")
-    print(f"Images saved in directory: {OUTPUT_DIR}")
+    print(f"Images saved in directory: {output_dir}")
     print("--------------------")
 
     print("\n--- Test Finished ---")

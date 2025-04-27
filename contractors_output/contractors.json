@@ -1,0 +1,1073 @@
+[
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 33.835221,
+                "lng": -118.117685
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 33.83657217989271,
+                    "lng": -118.1161894201073
+                },
+                "southwest": {
+                    "lat": 33.83387252010727,
+                    "lng": -118.1188890798928
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 3000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102174043367776148528\">Maria Alvarez</a>"
+                ],
+                "photo_reference": "AeeoHcIZftFP_D7WApxLB63i6XWC3mgmGE8z1FExSjr246ZwTxACAGRzKJ-UnZVgduZAknLvtMaODosVVcRw6u6np0jyS53iLdL2Rw5Su8vOo28MT0Ux3MQEGfvOiRFKQBuq9UV_W-pru1bgZNUX4KQN0PqsJuOHaIwEMjUslrq08o4-qHLMqsHSSahz1zgu5IDpFFqEUivkf2PFTcwVw3lBDXiDkEfgcYwO8Ffb8e7ks6FeCOsQCCOinlev7TcFfjCAB5BjijLEvxy-pwRuDNjIDIrkSBkgreeqaqUucjWHMu_6NM5m_nraUTiNqB1AOUwgEAJbI1wsV-c1pFi9PuivPjy0x-8edh-ah2XetXWwXFrvBaJsquoNnCZ0DX3CdRQo2QdFqucZaT-HGuaHrjjz5JSE5yBjkMAoDy3V2hCejHrAWkF8CYdotbvVm-yZeaR6lbguZEU3DXKIp0Wj2LVPVBzeb42dY1vkPPr3bDm2nk7pITuzTOyZ208doxNBMsqgGOE6dxhg1dQq-5MoS4GUnyXBnsz-245cvwegyBYA6JjMB7Q3DB5lrRg2lxMFrWdB1O04LCWVvc9DIg",
+                "width": 4000
+            }
+        ],
+        "place_id": "ChIJf_6bX3Qy3YAR1yJQrgdxu1U",
+        "plus_code": {
+            "compound_code": "RVPJ+3W Lakewood, California",
+            "global_code": "8553RVPJ+3W"
+        },
+        "price_level": 1,
+        "rating": 4.6,
+        "reference": "ChIJf_6bX3Qy3YAR1yJQrgdxu1U",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 474,
+        "vicinity": "4245 Woodruff Ave, Lakewood"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.1411973,
+                "lng": -117.9885533
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.14259077989273,
+                    "lng": -117.9872713701073
+                },
+                "southwest": {
+                    "lat": 34.13989112010728,
+                    "lng": -117.9899710298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 3000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/113699691820798684920\">Jeff V</a>"
+                ],
+                "photo_reference": "AeeoHcLUcdX_xkZcZsHY2cAnBjmgTUolLWjhkrBAUCg9UmB_Ojo8hhkGn6USnVqIzSOsF6o8WTSJvXN46bAKiXVOE1xz-IYXKFnNbh6d4BGn_093e1cU-z7VT8ikJMF2Y2_rhTTaSs_c6i8K6KsULuSWnttyxcvrTUopckL7PXnhW-LJsET3Gk29VHRdLxJPteCnaNqA8gUyD71-5NKiLqjWDTj-fSdDryzyuuGRTPOFpyE_69XQjyknRC0dxFIB7d6-CuKFbJ638cwCUcNwIW_r57uDfLVXA6qK-ZJXepIWmY7DzxTSV_k7WJwAcuq9N7BF61BrR64Xhl1zrJGtLRu2PpoYZb64x8xnAPtaM8aFTmfkElramCnB-TM4nXUGDVBU1pcDBxIHd6tL_6hOskKH2YGNw2L7ZQojDxq7UXasxaZIKOiEx7-dsa2g_7cyuSiJVjvJnv31xFLYOY-MYwUCPv_IJqOL98EUUz4wk5XAGQpqGqfVpLE1EKeqLER22b5xbDeWPPFyqlB6M6fSwKN6ZpgBaskpdBdLcqhXroZeGIqJUparsqxEa0fBl_41QHT5uoMZ-Wuy",
+                "width": 4000
+            }
+        ],
+        "place_id": "ChIJqyb_HA7ZwoAR4O0YFf4Dyg4",
+        "plus_code": {
+            "compound_code": "42R6+GH Monrovia, California",
+            "global_code": "856442R6+GH"
+        },
+        "rating": 4.3,
+        "reference": "ChIJqyb_HA7ZwoAR4O0YFf4Dyg4",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 42,
+        "vicinity": "735 E Huntington Dr, Monrovia"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.17977,
+                "lng": -118.3210917
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.18114767989272,
+                    "lng": -118.3197043701072
+                },
+                "southwest": {
+                    "lat": 34.17844802010728,
+                    "lng": -118.3224040298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 2448,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/105609384285184403194\">Jo Rosales</a>"
+                ],
+                "photo_reference": "AeeoHcKDR75BlfcWXWE4BzKYJZUITjKk64onTIoEBhey6HihAm3LkdrrvjqOXZsR0fO-luYcIzwliVfGo7Drd0qGgd66ENVHMjJgHcupwDov6kbxUZpBPL-r1Wb0hB6M-XT03mVfGnTbLtfFjYMHPXwM02HNThJHOxgTyhommXbDTSfBJxZfc2sXt_jFXGMzdrFlLXYHpelqmXWa-lm0mavc-53mZeObf6qWUAmp8bzip-EOq7Nn5Hm8aaExkvVZntB8G2Mtqj1_N5z30OwV0KzQQc6F4MeN8pZxCt-TKxfbyWvAkgjb1RQc7-v6waw3NUgDg2rknU_A6ggTaYKOtBfX5-GrQUNsAKOwpXnoS8Ktlq2DJcu8dKdZOSVsvg413EqNgzvUlumt7RjEI3j8hBS_cJDgmhTUSnTm-UIZEXafldUepI1zxvASEePO_pqz2a6uDs4Ha6ElTdM4RsPZHuFtyJ16sfwFfY5RSYcJvhvDq4qPr1HZnLtzneTco9fc_Jn3r_BOJKgIxtyr8G8pZp5hLWHHfowAaOVdheTx0Zx3hZPDaUKWHbWYk4j71cQKU1DLYcxIYElH0Q_jVQ",
+                "width": 3264
+            }
+        ],
+        "place_id": "ChIJcW9t7bWVwoART7lGgGqfpbE",
+        "plus_code": {
+            "compound_code": "5MHH+WH Burbank, California",
+            "global_code": "85635MHH+WH"
+        },
+        "rating": 4.3,
+        "reference": "ChIJcW9t7bWVwoART7lGgGqfpbE",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 222,
+        "vicinity": "683 N Victory Blvd, Burbank"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 33.8691878,
+                "lng": -118.0578266
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 33.87034982989272,
+                    "lng": -118.0564987701073
+                },
+                "southwest": {
+                    "lat": 33.86765017010728,
+                    "lng": -118.0591984298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/117789604150342728456\">Jb Kim</a>"
+                ],
+                "photo_reference": "AeeoHcILRwW99jUgwJ6JUzvKionAI4dJBbtTqZ_HP2qnSTNL2KV01SJEl0P-XwhpU4_V_Iywa4AxOQI--z3Mkf-yQLcv7gna4Sq9xiOY8Xv6YgB7lZNxSsymvk3--9v-eiY34vgGG1HindGdKivzIRiu40MJWJbcEchn38vG4toKZ1Hnz3H5g4k8OoVwI4dovSDgV5eMM63RxPWdEudQpOu2hnHyCopwczzjzdOHtJQfLchMsczH7NIfTEUpgHyWUDHj18eX5cFaewdx_uAoQqgZ3mOzTTHWgpItfeI_QYoUJ_-nwYo1EGm_EVOQbT6N6mxct-Et62CwnDQS9oYa_RHc32JuwP2J_ltaZvbAlJ7TDEZE00QMRml4NNdIK3U2JIuT9kBy8_-v-9Ke4XN2g-oG3ts9hC-Y9OsHdSX5FanD7C2RMk5q7IxX6vaMkDJpdMvSIM-TcITQkFA83bKwTX_odF3XOUzgb7iVjfn-luuMJX4j3vlUJYkFgngK8u8Dl8KgjkkkDJTdOskbA51bDLPaKN0NXZXCkl8ZJt6wF2As_PKTMEnRSKOP-EHI_kRanrjxax1-9Q",
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJ446gXa4t3YARdiYbEUH0adU",
+        "plus_code": {
+            "compound_code": "VW9R+MV Cerritos, California",
+            "global_code": "8553VW9R+MV"
+        },
+        "price_level": 1,
+        "rating": 4.4,
+        "reference": "ChIJ446gXa4t3YARdiYbEUH0adU",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 331,
+        "vicinity": "12865 Towne Center Dr, Cerritos"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 33.906556,
+                "lng": -118.393419
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 33.90767247989272,
+                    "lng": -118.3921002201073
+                },
+                "southwest": {
+                    "lat": 33.90497282010728,
+                    "lng": -118.3947998798927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110704881916497499639\">A Google User</a>"
+                ],
+                "photo_reference": "AeeoHcIAs0kKILEcSqzKJ3qPZ1yMX9PG30tp89MK5RLyfW1c1fRoXHAczzupzL3UeN3hnH359kEiYbyPGXLEQB-BJFMfVnTZg7REgu4RS1BjpozWzOvIPHvkka5N-FOdC0-oH5ORzKDtW1gXBF6ul_mEpH5xJLMu_GMs01DWuSq-yZTvd0Ohl8-ymTsJ1-_fj-SSsr4bNl3twAPYCWEbO9JRxlVQFaBGmpaefTtzyXkJ6Z8CRYQALyryzU9V7JEM9fU826bnGtm5MAXa1rl8xAqPNs7GNjvOVrNm2O1fP68km5M0AME2rvUvc0jWQSkRJsa0m0Tr13ARYBDdT8-M-gyZPtvKqYor5o_OZKKPZEG0tfkX8WrpqiSW0NFpHPZFTnPFhp8--sg7jvwITBS5srLhxy-cr271LEQpIFS0Gs5ehUaABRfUHG7q28vLMU5UMEUXmgLoaFQd_X9p4mVU9poB0FkCozJe8jEjXRr-7nuBYMAlNqGDVwbZSbw8SvuAKjVU_AsvmqIG3AKsLqDVISMzkve73FLp_WXGLCDnWWQZGlb4b4XEoSJo7roFF5GHec4i5Ph1M2bF",
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJe61YM_6zwoARaQd2UB3LIWQ",
+        "plus_code": {
+            "compound_code": "WJ44+JJ El Segundo, California",
+            "global_code": "8553WJ44+JJ"
+        },
+        "price_level": 1,
+        "rating": 4.5,
+        "reference": "ChIJe61YM_6zwoARaQd2UB3LIWQ",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 516,
+        "vicinity": "750 S Sepulveda Blvd, El Segundo"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.1415013,
+                "lng": -118.3757274
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.14282677989273,
+                    "lng": -118.3743218701073
+                },
+                "southwest": {
+                    "lat": 34.14012712010729,
+                    "lng": -118.3770215298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 2184,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/117323403849724002638\">\u0410\u043d\u0442\u043e\u043d \u0411\u0443\u043b\u0433\u0430\u043a\u043e\u0432</a>"
+                ],
+                "photo_reference": "AeeoHcLKUVyMxUDZy4OUj1oKahA8jgXL6jzPU450SxfjCTJ9IG5k26Ee0tNOpwieCtgfj786juPBPU36Y9wxz4Y8mMrr0asxsnqjcNdD4KtAt_b4V5s4SJHkzBCQqjQ9YJr8-KqzSvMX3w0Ynzi5-hAsdc0rpT8dmpUs_DOAcLkBNxDHD0LyUC0EFQ-5cLXsmKlK2VDlmdGGsrnMHug4RSuZhpaAfJS11L7yuX2vxVAJniweAxZoKAYV4kM9cJUyUmLQmj86D6zb73wiZpauEa0nfLR0JURLikE5EsMtnI76rWibXRxnYLjcqbl9oMh4rDJSw9IKluu6V8Zp8X1_nrumwT2juMIQxBYBKAytAolWrS9_hGDJSLf_pKS9_Ug-8sClvcVLWMYZQvfI2ETCJ1Zqq-seUYkzBiokQGEKYUWsSRULyf4e3pPcOkj16vgigfxPtvhp0ZBx2z2DQxk3wVzGYzJsZxYvx-RRRqQcG76iOCEjRYRgBcH8fGJcHTR9MhszqUjRaC1lYG9wE1q_0jQjjaxDGEg5t8Y8q8DTSyKLHEHQZuvTVoU2usRPS-B56CWNZztvKgcA1vkj3w",
+                "width": 4608
+            }
+        ],
+        "place_id": "ChIJeSGGPKS_woARNh53Slg-7hM",
+        "plus_code": {
+            "compound_code": "4JRF+JP Studio City, Los Angeles, CA",
+            "global_code": "85634JRF+JP"
+        },
+        "rating": 4.4,
+        "reference": "ChIJeSGGPKS_woARNh53Slg-7hM",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 278,
+        "vicinity": "11211 Ventura Blvd, Studio City"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.2041969,
+                "lng": -118.198616
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.20563442989272,
+                    "lng": -118.1973404701073
+                },
+                "southwest": {
+                    "lat": 34.20293477010728,
+                    "lng": -118.2000401298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 1080,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/103132688333970650209\">Armen Ar</a>"
+                ],
+                "photo_reference": "AeeoHcIbt-563vA-f3qZoesA9cu-Pp2J3M8vswjXE1y8CYxd4Nr4r981QzDFzpzBliioo7Ju8ydLEKHXJwUtezOzJk4Gdn68jUxj_WoEdNG_TQcj7YBEt4Q-FYDbUsJ0oxx10-3DkifIlciE1D_hs1STckRDqEna4Jnkx38Ex9Dfv-WqxPZIIGFMVOKK1-Ya-2JgkNmbFMOVLktjbLo__KxqUEGdU5o966XLlGlDlzfFPbLZ184a6mmaCM_97IukDaVnuo0EyEz6GnBXqRtSPaLctIGnytTrGZoayln76ysg4qfuyXJNzksXb0_wzaFE7XvVRAnPltUQCOn27gCtNnBb7m6tXGAqX6QvgfBRmang-kuGpx-c2wIqV_8xeonzaCeqeabylq91NsItBNya3bFntKwRK39TJPyaHY6edomt_KT1KVIAVFoUOvjbLdxiKdVjMz8aSgr0RB8os8x_WNWyqU0NTQ2Bayvwj3LU_KKOkJuExDKIBY7a7EH8BJnmLRkQsmvZLYiIKkFC9k9pMk7ffI_cAnll_Rv4mFe5yAbPC9wdzuSg1H_7OEPWOAIwa8O5L0f3Fw",
+                "width": 1920
+            }
+        ],
+        "place_id": "ChIJZecCz_3pwoARqkMbbFYKi-Q",
+        "plus_code": {
+            "compound_code": "6R32+MH La Ca\u00f1ada Flintridge, California",
+            "global_code": "85636R32+MH"
+        },
+        "price_level": 1,
+        "rating": 4.3,
+        "reference": "ChIJZecCz_3pwoARqkMbbFYKi-Q",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 390,
+        "vicinity": "935 Foothill Blvd, La Ca\u00f1ada Flintridge"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.0384591,
+                "lng": -118.4403077
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.03942487989272,
+                    "lng": -118.4392349701073
+                },
+                "southwest": {
+                    "lat": 34.03672522010727,
+                    "lng": -118.4419346298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116152467092866226223\">Larry Hong</a>"
+                ],
+                "photo_reference": "AeeoHcKIuYf2dHQMmIxcPGSH4Y5XydRfrmSrcP4v764GnB7TlYI-qpyO4IvZcMHlyG9zhNxNza7P0gvNW5qABE3gZbNg5yoNW-vxg_HSlImsmwcEVaYtmBuZ3Ar-wBJKlb7jYX-u6_OBSyUYqHUQ2oI6Cc7AG1P0-I031GGuhf-8_6FH9CthD1pLQwcVCqUPIn5s82iQ4ZiuZGjsQz8W5GGwUD2j1I-AtFEUqaS2h1QbDbXZEEiO-a1PZfYP7Dv2VRDMm6hPYICL9I09wO6iksPqRST6dl3yPi44yeeYnjeIN-i9ZlT5hNGCrZfHljeLGtv4PI7Q4j21yL57wG8S_5IRClZLmFhPmwr-vpCy_4JOZuC1xrVZulT_K8sCYlejmn-839aGRiOEq-HMhIyQ64mA08ZMkYi4yzbIzzxmIO05Uy51JRs1PWifHzbB-AeHAuQsRikj7uyUja537v7VF0tQZaS_1rqwnamUPBvZlU0OwPFxNdJolX2nwxZ2wG51T2ylsm088Be7hQlZpsssD8feLevGmf7nZz_OQViwUiLVlH8opgSrkcFj-DKAzi-h4qE5xPgBVYRDLqtqJA",
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJX1Ev2nS7woAReiC_GlhnacI",
+        "plus_code": {
+            "compound_code": "2HQ5+9V West Los Angeles, Los Angeles, CA",
+            "global_code": "85632HQ5+9V"
+        },
+        "rating": 4.1,
+        "reference": "ChIJX1Ev2nS7woAReiC_GlhnacI",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 109,
+        "vicinity": "11250 W Olympic Blvd, West Los Angeles"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 33.8548867,
+                "lng": -118.3522657
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 33.85623047989273,
+                    "lng": -118.3511639701073
+                },
+                "southwest": {
+                    "lat": 33.85353082010729,
+                    "lng": -118.3538636298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 2268,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102707062696991585435\">A Google User</a>"
+                ],
+                "photo_reference": "AeeoHcKJJlJ2gVL3S3G7AN_MF-c8ZwNjGfXFKhSMA6Tg5lrXdv36V_o5_iUEax19xgf70ATWEpumeE0V0gIx10csXCsrEEPekXONjE2-9wlGTCFoDFct1blbfdiZ8hWAN4GB49zXYJiwtCxKMuPKRPFKMpjC4_rTx5XDp_S5MhVkPvRfgCTI2JFfxPEblPLN2Fm-G_jTFenCm0-lvuJ28419nztcseto53W54RSVU8rNDbm-fw0q65G59GxKXITyAGOSP4Okpsk7dBFsyiaCALVXCqPzpYTmpr0Oav5RhXx0OPzwp8G-f3pRpUo67ELyJVA6UAcL3SbtKxb2RyVTymg_saCa5-zyEqpNbjWuXkmWx_DwaxYNegQ5FKVw83Ee3w2gH1JxODMUFgU_SnEGWB-vJQkXF4coIF-2wFs4D_R2TW5qha-b9H67LY88xDM6HbSqqz-qzc-8J0zulYlNQixEaUoKDJmGpReYGGDKiR7PVmi0oITLCL0KSxJhddcWKKW90IQOH4p1tVZw03vvy_AvyW-_wRYQjMkdyXOlcX5ezlbFHfVejelEAxvwIOQ-vHKm1A0kjZDv",
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJy0STkt20woAR7H_GcfB-ftg",
+        "plus_code": {
+            "compound_code": "VJ3X+X3 Torrance, California",
+            "global_code": "8553VJ3X+X3"
+        },
+        "price_level": 1,
+        "rating": 4.5,
+        "reference": "ChIJy0STkt20woAR7H_GcfB-ftg",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 451,
+        "vicinity": "19350 Hawthorne Blvd, Torrance"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.0523796,
+                "lng": -118.298172
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.05376472989273,
+                    "lng": -118.2969538201073
+                },
+                "southwest": {
+                    "lat": 34.05106507010728,
+                    "lng": -118.2996534798928
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "Kim's Home Center",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 3000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100938789046390273800\">A Google User</a>"
+                ],
+                "photo_reference": "AeeoHcJwfcWwn2SvVPSG3yOsGaD7OwsBwcydsE6w60xpFTNILovfB-7b0XehD72FlZo-Jqq27SD1vkQ_J4SjuyiibJth4crwmxJPnzvls2SBY4xje9cZfazpTFU20f4F56SvVGCxkI05IWwOsEIlNn1q0q_GEqbtPJCy37xSgliCVVsBojI1E-9lfF_TqyxU_7wI98LImQIkW3yosvexi9E6k7kbisVBSV4Y34_8tql4ZPKxIyfIkWWpXXt-y6KEeMcTqBBt9vLWpnSFbszifGydMIGk0iPnK3JmBIO_b96kXrEUHr6d8LY",
+                "width": 4000
+            }
+        ],
+        "place_id": "ChIJ65ZQZoDHwoARLDXKdMv60n4",
+        "plus_code": {
+            "compound_code": "3P22+XP Los Angeles, California",
+            "global_code": "85633P22+XP"
+        },
+        "rating": 4.2,
+        "reference": "ChIJ65ZQZoDHwoARLDXKdMv60n4",
+        "scope": "GOOGLE",
+        "types": [
+            "home_goods_store",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 1562,
+        "vicinity": "2940 W Olympic Blvd, Los Angeles"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 33.9480494,
+                "lng": -118.0010584
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 33.94925922989272,
+                    "lng": -117.9997117201073
+                },
+                "southwest": {
+                    "lat": 33.94655957010728,
+                    "lng": -118.0024113798928
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 1908,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/109676180014567210584\">A Google User</a>"
+                ],
+                "photo_reference": "AeeoHcJrWoME4ct5chiOGv8sKYIP-N3MqlFj8k2YDYBE4Yyt6Z7Uo3_3t868tlXWMw3jYBhYT9O4I1h9urpZWc8KOekZytcTs0CmGvo_g_A_q5e8cOQ6cdxU0re37mOydJdhp7ZzAzh9pYBOQIp5WfBU4bntZXgep0X8uA6eKiKfxU2V7NC0YeS2WEWCzpEO24fRqVzUR3HH_KYVXu10UABWAXEb59cD9ZQ4ym-x87d3dSSsM79suvdAj5cR7UfVFmra8vGlxiCwjxEIiAajejH0FXCBatAwQ1E-1B_7pbJEkcax8cbH0_g9zq9YuqlgctI0vsWqnOh0kLhdCz7QutBjVRcAXMR4ycycy-wiaCbP22WqRIKNbTqkjbYibDyAqWPedNRVQe9m-9qMndhH27vsGyYKuzBr6hlbSo94fYIFdPInAyMU_9aLMggfQPtYO6ETjtPM7up5KY4m3N6djsZROL1-3AyCcy9e-xPVXE7nLv0beqWxHbHwsGwBn00nuH5F66rxcoJQM5HZiZgNyYrqjyOWnkGXM25Y-d7A8mNoXzAvz6B6pZhAfcTSFMO3boIRaVI_QvVm",
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJF9hep5bUwoAR-9KilipoRfA",
+        "plus_code": {
+            "compound_code": "WXXX+6H Whittier, California",
+            "global_code": "8553WXXX+6H"
+        },
+        "price_level": 1,
+        "rating": 4.4,
+        "reference": "ChIJF9hep5bUwoAR-9KilipoRfA",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 562,
+        "vicinity": "15245 Whittier Blvd, Whittier"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.1449309,
+                "lng": -118.2542355
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.14643042989272,
+                    "lng": -118.2530734701073
+                },
+                "southwest": {
+                    "lat": 34.14373077010728,
+                    "lng": -118.2557731298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 1836,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/106603103679000140704\">Karreno Alexanyan</a>"
+                ],
+                "photo_reference": "AeeoHcJr1vhTQfbDQ2dncpMmDXC0xIPvnIX_zC3UBQRgjSBlo8Jbu4EFXuLJTUYHGLChdoWeRlowJjrM0iNJBKTzIwxFp2A48pLeByZLqio5yK87e-2T5zNgsKU_u1QYDwbLwuLd6xBp7uYDPJQFbSIX0ORPCFFbf0_05OJeDAJk0abh00X-Uq5ig3XMWUrj5T5JFc8OTsi8IVjq5PvzK7kcJLe0QlT_hlAp74rv8ciqAs63nt37yd_UJ9F-p4Lv-swzDyWORz-dG3I4cyD0NmAFx6nClQ0A1thTG8m7nn35WE6-flrwye4GN6Aj_t2eVP7bbYidURKsd2j7FXGllXvEyUvrE4tu7623u6tgqFHsaxR5w78ln3mwoobdh5h8hlTzo0Hf4nbYZAZ5cuIaSmesAk6saqbDu2aOvykFzpWh8LSSQ_dKTxwvUn2iCIzc0so1SJk6fNw0eApKyZ15CxihPOvF1Z4eEfzZGJ0S0pRXXDzl32qumGMV1e2RUfU7T38zjWwybd7rmOcIjejVV4exVoP0Xqi8BXAh5UDY8maz7qBT6vZIBdfu-ahC2npCDgIBdhRDu1IS2ykfIw",
+                "width": 3264
+            }
+        ],
+        "place_id": "ChIJqx1_pP_AwoARG_4uU8X5hTo",
+        "plus_code": {
+            "compound_code": "4PVW+X8 Glendale, California",
+            "global_code": "85634PVW+X8"
+        },
+        "price_level": 1,
+        "rating": 4.3,
+        "reference": "ChIJqx1_pP_AwoARG_4uU8X5hTo",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 571,
+        "vicinity": "142 S Brand Blvd, Glendale"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.151009,
+                "lng": -118.0700513
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.15224697989272,
+                    "lng": -118.0687723701073
+                },
+                "southwest": {
+                    "lat": 34.14954732010728,
+                    "lng": -118.0714720298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 3000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114869730612763373059\">Ralf Zhu</a>"
+                ],
+                "photo_reference": "AeeoHcJvmYBY8O5N8SeaeqrPY9MD7T77tlegAbfNyYtJb4eRcg6VjOh8XwiA6vmA9-EgZw9twu8WN4t8e-Gmhnxm6JGSMRzYsrRvc7cvBGGMnFpMeCU1DxrK_Wg6eCLGzrhW284075I6ge2Ufi5TL85xTyU92vVT4sE02-nmPNfYQgCpSkqMK6-sxZtments5yDIuWiQN3JHDmUNTzHoD4e2B2JMoXtfugcBEH17vTkR_GrT0R_HET-0Q9m-WHBuwc4a0dT-Ltr3FcG4mPrXr5S7KIdkzKjjc4JoPcJgR0y2nVIZpdH_0iQ5nPQWEe3ls27Edpbb9PYAdSt2VqxE_fM6TdHwdBHKkVCcQj1gNbflDE31b91oQMNpUizlNKHBioiEMRWyDumRcSRoaK1LrIVN1kWzD-zSSPe2z3b785Ays3mJNNcOghhgmhAzcwqmDKjF6O5wuWPQgJN7XZ3j4YgpRH0OMB0Vpa6mfhxPE-m85X1HpUQCPAKCJyxrQ2d_Y9fcPXSI8Eo-Gnrm9IyEYxng1THixeyTgvdukvkGowJEdIIUjA9i0HOnz3bKlF1u_cF4DKcu8rPD",
+                "width": 4000
+            }
+        ],
+        "place_id": "ChIJu5Tpbn7bwoARdpwnsvQp2lQ",
+        "plus_code": {
+            "compound_code": "5W2H+CX Pasadena, California",
+            "global_code": "85635W2H+CX"
+        },
+        "price_level": 1,
+        "rating": 4.4,
+        "reference": "ChIJu5Tpbn7bwoARdpwnsvQp2lQ",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 610,
+        "vicinity": "3803 E Foothill Blvd, Pasadena"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 33.959183,
+                "lng": -118.396684
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 33.96052872989272,
+                    "lng": -118.3953274201073
+                },
+                "southwest": {
+                    "lat": 33.95782907010728,
+                    "lng": -118.3980270798927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/108607591127132213644\">A Google User</a>"
+                ],
+                "photo_reference": "AeeoHcLYg7gKw5otP-U081araS7wZGEEB7NaqvGA4YYHG47joXmUyvklKFQ2aBm61OXeKgmAC9G462ChrRMjH2HtaunvUv2n84vcRvLVBXDrJ0fhprUN7-hf5RulJBa16b87bZiK9bfwP-c6MmSun_hZVZ1jNb3IfR3M5jz5gBSH0d3smFh72b0fS0Rpbhei91SbwmsYfzv5PYD1eocweWMfEgLf5Zr4NVCLVsVCPexG_VVAhnCRwc3OHhSM12T_7-CgH6ipGnZlboBn3bCtXrE0gayy-jOgdRHTtXtuinu_LlQOsVGtrKs",
+                "width": 6000
+            }
+        ],
+        "place_id": "ChIJgV6F7ZKxwoARH5pQHEmbmy8",
+        "plus_code": {
+            "compound_code": "XJ53+M8 Westchester, Los Angeles, CA",
+            "global_code": "8553XJ53+M8"
+        },
+        "rating": 4.6,
+        "reference": "ChIJgV6F7ZKxwoARH5pQHEmbmy8",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "furniture_store",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 9,
+        "vicinity": "8621 S Sepulveda Blvd, Westchester"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 33.959165,
+                "lng": -118.3966648
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 33.96053502989272,
+                    "lng": -118.3953273201073
+                },
+                "southwest": {
+                    "lat": 33.95783537010728,
+                    "lng": -118.3980269798927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "T.J. Maxx & HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 3036,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/106031348475784982187\">Maarten de Jong</a>"
+                ],
+                "photo_reference": "AeeoHcIZV_bw9BewkOXDkR8gFRdNwaONIWoGxdt62QvxRww1jQLCXMxlfotFwrX7l7vnCRYmoeuXurdUWQV30imj70fPZbaxlARuASP9m1Q0HzS0G9TrDRBmdJFMc3J5f1iUFxLdOB3vJO9O3xIVH5stTcVycQWY49kzh-tStEzWwpaOBPtzFgyKY6xc5IJTZFHE-IBlcwJqwLSWneWqLuYrNJR5rh6wwuOZSn-GycTHJI6hF1AUmiHfo3IgTs8H4f3_bEQXBKQPngMA8DxiNme4GasrwaPPj1EXwd7W41cmnhtx-90dawPkxo5YbWKPtWICep9bvIh5F0JP9IhigOcY5w8pXjntqmQmvgg096-XfiDM5VvlZNhbO0jmoMjmzY5cz5BCgDd6WsB4UwLVnxeanNopEYtB7tLX12jQNCQlGGYWc5NDRzWJ_MR8m8issnIrSZcaYHlcDod7EbM9PZ1vydvIsef_3EWfxo42iEbWluGsw9ZicvrjifqWNVbhir15uZLr3XIE1Vi9q2mBuN9QSIu-wW42FkSquDWSGJCu-qp0mx7WMxL88DjpBT-IcyLalIfvh6V4MPPEFg",
+                "width": 4048
+            }
+        ],
+        "place_id": "ChIJwwQeos2wwoARi_CRk8LEcCE",
+        "plus_code": {
+            "compound_code": "XJ53+M8 Westchester, Los Angeles, CA",
+            "global_code": "8553XJ53+M8"
+        },
+        "price_level": 1,
+        "rating": 4.4,
+        "reference": "ChIJwwQeos2wwoARi_CRk8LEcCE",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "jewelry_store",
+            "point_of_interest",
+            "clothing_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 1305,
+        "vicinity": "8621 S Sepulveda Blvd, Westchester"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.156387,
+                "lng": -118.480638
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.15781972989272,
+                    "lng": -118.4794414701073
+                },
+                "southwest": {
+                    "lat": 34.15512007010727,
+                    "lng": -118.4821411298928
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "Marshalls & HomeGoods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/115414031107461139490\">dror dekel</a>"
+                ],
+                "photo_reference": "AeeoHcIu7Yw0rucswa6KMh7M7udZKr42QY9xR7Zd70qcpwfTFK5LbF7_8zRcZZIsQoJFYRRGOYXAzXCwCVWOMq_5fDNEVhMwyL8fkwdGcq1qwkCAIOz3HoAxm6-wmXryabTRKChXCGk9XmmL7zEd6wkdlrGMZ5DcoRaAjSsIC8KzNe3hrJUT7qmzE7RrTNhcWwtsexHYcab9cMFDXGoeHX-KGoI0CHgUjnaZ91wqjlCfBwpOX-5Ov81Lk-uU3QrAf7bKfOKX3tXeNQi8PVL03BFlZho15tw_3rFu-Zwi9yzCoPBOdKBbHrW7s6EH5skTWLt5F49UGecPx3H130gaCAG44SGH6g9-h25BIiRFTWhC_N926B5VkZqnM3e8Y-wHDrv7A30zISlLm6oKtImOFJXxu1gWoCwTH1wnl04HW64rOZy7WkAlMV7GWqp-v-Ka3aRRItA-4aX75pUDxmPt1Qyf_RH9AQK0COfTmFJInCXvHytPjXM6NAFV9tXOhTFq1rKxEZcHt5qIVgOphM56z0g3THCFl23sMaanT3hHwxV1l_TRSYTXJ3W3LS4cRJqMTuG61No_PIjimDEoGg",
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJf8o1-YuXwoARBM2y6iKyeq0",
+        "plus_code": {
+            "compound_code": "5G49+HP Encino, Los Angeles, CA",
+            "global_code": "85635G49+HP"
+        },
+        "price_level": 1,
+        "rating": 4.2,
+        "reference": "ChIJf8o1-YuXwoARBM2y6iKyeq0",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "clothing_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 861,
+        "vicinity": "15945 Ventura Blvd, Encino"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 33.859743,
+                "lng": -118.107288
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 33.86100597989272,
+                    "lng": -118.1060393701073
+                },
+                "southwest": {
+                    "lat": 33.85830632010727,
+                    "lng": -118.1087390298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "Citi Mall Home Goods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111570577510128002994\">Henrietta Escano</a>"
+                ],
+                "photo_reference": "AeeoHcIjPuvo1xR96fF50njHj-ud_fs0LTxJTWdwgr8Ki5r1vXFh7rAxKDTZ-ozr_MHkiIoupY7TPawzhYoP-ST_5SxzuwkP-TEzyPW1-ht08_LU4WX5K_3Snj97EL-bmXRTVNksU9eXAnqGvqlFktufcHa-2wQ3EWJ-mAbkF3vavnbMi4GNRRULyrvKn3fJvat_Z1ITDpf_ZAXF3fNLWV5wc2Pnz74v_781NqagJpGQ-RIolDO8ekPu9fO81FLDcCdwjI26gz1HPtL-AwwTGK30a8_5-jdMpyysuIdvMEv6uY-1HFcrkqQL1WLg26kD4iFRJg8WBktGtzRDfYWQ9uzNzYeMtzM3e_meI4Vzvo6m78636yXVsNyzUFyuKYCnESPzg8L05gUAb0NdFThEc8yjEXIjasspRMUqI-JnSB0tIi4ociOX_zXNlbqQmfvSQyuIIOKh4-31ZmhswfC6RLjsnkmBr1VWYHFWFEhsxlNf3lKuRSx_7oT-uBlfFZv1NJVgnuI1wuG8N412_H8lqCBmKhFtfZoj-QgZpM6lyzM-cq0ISsiEW0qL9Vcj0-1xVW4Tq6FLj_I6",
+                "width": 3000
+            }
+        ],
+        "place_id": "ChIJVeVts-Yt3YARGWNg2D9cwzE",
+        "plus_code": {
+            "compound_code": "VV5V+V3 Cerritos, California",
+            "global_code": "8553VV5V+V3"
+        },
+        "rating": 3.9,
+        "reference": "ChIJVeVts-Yt3YARGWNg2D9cwzE",
+        "scope": "GOOGLE",
+        "types": [
+            "furniture_store",
+            "point_of_interest",
+            "home_goods_store",
+            "clothing_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 149,
+        "vicinity": "10727 South St, Cerritos"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 33.9220819,
+                "lng": -118.1281344
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 33.92349407989272,
+                    "lng": -118.1269589201073
+                },
+                "southwest": {
+                    "lat": 33.92079442010728,
+                    "lng": -118.1296585798927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "Home Goods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "place_id": "ChIJAQDAIW7NwoARORh0SZJYesI",
+        "plus_code": {
+            "compound_code": "WVCC+RM Downey, California",
+            "global_code": "8553WVCC+RM"
+        },
+        "rating": 3.9,
+        "reference": "ChIJAQDAIW7NwoARORh0SZJYesI",
+        "scope": "GOOGLE",
+        "types": [
+            "department_store",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 8,
+        "vicinity": "9050 Apollo Way, Downey"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.1996985,
+                "lng": -118.4653645
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.20103082989272,
+                    "lng": -118.4641946701072
+                },
+                "southwest": {
+                    "lat": 34.19833117010728,
+                    "lng": -118.4668943298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "Daiso - Japanese Household Goods",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 335,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/105099649591320950378\">A Google User</a>"
+                ],
+                "photo_reference": "AeeoHcK6LjqMo3JmeVu_r8TtBcGNd5lvthY3kH-_fWpFvqHjFwjgaX8D-268-6JzGZu1JuoFcoKziy47cGs2b4VyiWmm9goBzm0h6pJ9dAJb018s6JCnsBW3fH-bbDPUCg0QjlXNoeaTgFVg6eQ7aU-0janD_ia5IfeugZWu85gD5jpIe7y7yP1bhrOScFjK3_-DUc7itoenHZ7yvmnTLzLdvkajcIr1fLbi1N5LceBjXBcB8ffh-d6TjWZl26hbV-3VMMHDFSR7BXKOicZVvVeI9JDCQj9jQFvUHkTUlKNxhKXSAH5qQMI",
+                "width": 640
+            }
+        ],
+        "place_id": "ChIJO_0xytiXwoAR3uE_1EYdgB4",
+        "plus_code": {
+            "compound_code": "5GXM+VV Van Nuys, Los Angeles, CA",
+            "global_code": "85635GXM+VV"
+        },
+        "rating": 4.7,
+        "reference": "ChIJO_0xytiXwoAR3uE_1EYdgB4",
+        "scope": "GOOGLE",
+        "types": [
+            "point_of_interest",
+            "home_goods_store",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 16,
+        "vicinity": "7110 Sepulveda Blvd, Van Nuys"
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "geometry": {
+            "location": {
+                "lat": 34.0631096,
+                "lng": -118.2986392
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 34.06456562989272,
+                    "lng": -118.2969449201073
+                },
+                "southwest": {
+                    "lat": 34.06186597010728,
+                    "lng": -118.2996445798927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "Hello Home",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 3456,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/103041827976361443411\">Scott Yu</a>"
+                ],
+                "photo_reference": "AeeoHcJ3hECrgHLu7UhdP2IRjmFHF7UNwESc6KtYvpZoNe3REEKZqzKI5Q7P_gGh07Tp0EG734qyji4yKZhX8lVJWGb_Jp70IBDqXJgx-X2BtBC3wE7SpxkRkVzNLCWJPXYEUA9jznNyPhniRqhCBkuiWg3HYgZZVaUWOQ9dFj4_pjHjCp1AxOVdO-BlEsEMoxITVhHWHjSDGgucoH_8ch5JrYB5_2u1s2MfuiQt-8ZXBfdGuOCiCMXGtZIq5swncFdUFTKBuIYiBebPi2rvXEzA98vDdhF1RYKNMT9NwRo8GSaoLqHalmvUEMvVGMm9Woloe9h1HyDrQxD9ejX6IInG2zWZrkkxbjkxHFuUEI9wMauyV4II4HAXs_QxKHkHdskWQNdvANvb6Rt4iokyghMSfQ5iBckQalTqtF7m-bWYAKUY1yIV5XBLjuZwzjOtlbqrb6wGgkc45jivS-AHwkQyOFUxF3HxXK-nc4iJGmudM84D0SY6qKNfN9qGgEHRHfozLjUO3-3uVwX7NDYEi1cgH1B42iBjHQSjOgGzHFzSQtSVBLxcpH2qttCAlkZinhW7O8A9WuUw",
+                "width": 4608
+            }
+        ],
+        "place_id": "ChIJ4TFHT8LHwoARfTZDDueQANo",
+        "plus_code": {
+            "compound_code": "3P72+6G Los Angeles, California",
+            "global_code": "85633P72+6G"
+        },
+        "rating": 4,
+        "reference": "ChIJ4TFHT8LHwoARfTZDDueQANo",
+        "scope": "GOOGLE",
+        "types": [
+            "home_goods_store",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 3,
+        "vicinity": "W 6th St, Los Angeles"
+    }
+]

@@ -36,15 +36,48 @@ OUTPUT_DIR = base_dir / "interior_design_images"
 OUTPUT_FILENAME_BASE = "generated_room_apikey_exp_config" # Updated filename
 
 # --- Instructions ---
-GENERATION_PROMPT = """Using the first image (the base room) and the second image (the carpet sample), generate a new image.
-The new image should show the base room, but with the entire visible floor area realistically replaced by a carpet matching the style, dark grey color, and plush texture shown in the second image (carpet sample).
-Maintain the original room's perspective, lighting, and other furniture/objects."""
+GENERATION_PROMPT = """"""
 
 # --- Target Model ---
 # *** Using the specific experimental model as requested ***
 TARGET_MODEL_NAME = "gemini-2.0-flash-exp"
 print(f"--- Using Model: {TARGET_MODEL_NAME} ---")
 # !!! WARNING: Previous tests showed this model via this API did NOT generate an image !!!
+
+def generate_image_prompt(user_query: str) -> str:
+    """Generate a specific image generation prompt based on the user's request."""
+    try:
+        genai.configure(api_key=API_KEY)
+        model = genai.GenerativeModel('models/gemini-1.5-flash')
+        
+        prompt = f"""Given a user's request for a home product, generate a detailed prompt for an AI image generation model.
+        The prompt should specify how to integrate the product into a room image.
+
+        User request: "{user_query}"
+
+        Generate a prompt that:
+        1. Specifies how the product should be integrated into the room
+        2. Maintains the room's perspective and lighting
+        3. Ensures the product matches its style, color, and texture
+        4. Keeps other furniture and objects in place
+        5. Creates a realistic interior design visualization
+
+        Output ONLY the prompt itself, nothing else."""
+
+        response = model.generate_content(prompt)
+        generated_prompt = response.text.strip()
+        
+        if not generated_prompt:
+            print("Error: Gemini did not return a prompt.")
+            return None
+            
+        print(f"Generated image prompt: {generated_prompt}")
+        return generated_prompt
+        
+    except Exception as e:
+        print(f"Error generating image prompt: {e}")
+        traceback.print_exc()
+        return None
 
 # --- Helper to prepare image (returns PIL Image object) ---
 def prepare_image(image_path: Path) -> PIL.Image.Image | None:
@@ -74,7 +107,7 @@ def prepare_image(image_path: Path) -> PIL.Image.Image | None:
         return None
 
 # --- Helper function to save binary data ---
-def save_binary_file(file_path: Path, data: bytes):
+def save_binary_file(file_path: Path, data: bytes) -> bool:
     """Saves binary data to a file."""
     try:
         file_path.parent.mkdir(parents=True, exist_ok=True)
@@ -90,6 +123,50 @@ def save_binary_file(file_path: Path, data: bytes):
          print(f"An unexpected error occurred saving file {file_path}: {e}")
          traceback.print_exc()
          return False
+
+def generate_room_image(room_image_path: Path, product_image_path: Path, user_query: str, output_path: Path) -> bool:
+    """Generate a new image showing the product in the room."""
+    try:
+        # Prepare images
+        room_image = prepare_image(room_image_path)
+        product_image = prepare_image(product_image_path)
+        
+        if not room_image or not product_image:
+            return False
+
+        # Generate the image prompt based on user's request
+        image_prompt = generate_image_prompt(user_query)
+        if not image_prompt:
+            print("Failed to generate image prompt. Exiting.")
+            return False
+
+        # Configure Gemini
+        genai.configure(api_key=API_KEY)
+        model = genai.GenerativeModel('gemini-2.0-flash-exp')
+
+        generation_config = {
+            "response_modalities": ["IMAGE", "TEXT"]
+        }
+
+        response = model.generate_content(
+            contents=[image_prompt, room_image, product_image],
+            generation_config=generation_config,
+            stream=False
+        )
+
+        # Save the generated image
+        if response and hasattr(response, 'candidates'):
+            candidate = response.candidates[0]
+            if hasattr(candidate, 'content') and hasattr(candidate.content, 'parts'):
+                for part in candidate.content.parts:
+                    if hasattr(part, "inline_data") and part.inline_data:
+                        return save_binary_file(output_path, part.inline_data.data)
+        return False
+
+    except Exception as e:
+        print(f"Error during image generation: {e}")
+        traceback.print_exc()
+        return False
 
 # --- Main Execution ---
 if __name__ == "__main__":
