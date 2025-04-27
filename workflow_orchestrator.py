@@ -1,9 +1,9 @@
 import os
 import json
 from pathlib import Path
-from test_homedepot_search import get_search_query_from_gemini, search_home_depot_serpapi, download_product_images
-from test_contractor_search_dynamic_location import get_search_term_from_gemini, find_contractors_google_places
-from test_image_generation import generate_room_image, generate_image_prompt
+from homedepot_backend import get_search_query_from_gemini, search_home_depot_serpapi, download_product_images
+from contractor_backend import get_search_term_from_gemini, find_contractors_google_places
+from image_generation_backend import generate_room_image, generate_image_prompt
 from home_depot_db import HomeDepotDB
 from contractors_db import ContractorsDB
 from interior_design_db import InteriorDesignDB
