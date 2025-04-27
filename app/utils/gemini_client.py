@@ -37,7 +37,7 @@ def _audio_part(path: Path):
 
 def diagnose(media: Dict[str, Path], desc: str | None) -> Dict[str, Any]:
     """
-    Feed image / video / audio (+ optional text) to Gemini and
+    Feed image / video / audio / text to Gemini and
     return strict-JSON diagnosis.
     """
     prompt = (

@@ -1,12 +1,13 @@
 import json
 from pathlib import Path
+import time
 
 import click
 from utils.gemini_client import diagnose, generate_step_visual
 from utils.pro_finder   import choose_place_type, parse_location_string, find_nearby_pros
 from utils.auto_loc     import get_location
-from utils.pro_finder   import geocode        # reuse same helper
-from utils.product_finder import search_products    # 🆕 (new import added)
+from utils.pro_finder   import geocode
+from utils.product_finder import search_products
 
 @click.command()
 @click.option("--image", "-i", type=click.Path(exists=True), help="Image file")
@@ -16,9 +17,15 @@ from utils.product_finder import search_products    # 🆕 (new import added)
 @click.option("--location", "-l", help="Address or 'lat,lng' (optional)")
 @click.option("--radius", "-r", default=8000, help="Search radius in metres")
 def main(image=None, video=None, audio=None, desc=None, location=None, radius=8000):
-    """🛠️  Multimodal Repair Assistant (Gemini + Google Maps)"""
     if not any([image, video, audio, desc]):
-        click.secho("❌  Provide at least one input (image / video / audio / desc).", fg="red")
+        print(json.dumps({
+            "summary": [],
+            "repair_steps": [],
+            "step_visuals": [],
+            "metadata": {},
+            "contractors_nearby": [],
+            "products_needed": []
+        }))
         return
 
     media = {}
@@ -28,67 +35,75 @@ def main(image=None, video=None, audio=None, desc=None, location=None, radius=80
 
     result = diagnose(media, desc)
 
-    click.echo("\n=== ✅ SUMMARY ===")
-    click.echo(result.get("summary", "—"))
+    # Retry once if failed
+    if result.get("summary", "") == "Failed to analyse the issue.":
+        time.sleep(1)  # small wait for stability
+        result = diagnose(media, desc)
 
-    click.echo("\n=== 🛠️  REPAIR STEPS ===")
-    for i, step in enumerate(result.get("steps", []), 1):
-        click.echo(f"{i}. {step}")
+    summary = result.get("summary", "")
+    steps = result.get("steps", [])
+    metadata = {k: v for k, v in result.items() if k not in ("summary", "steps")}
 
-    click.echo("\n=== 🎨 STEP VISUALS ===")
-    for i, step in enumerate(result.get("steps", []), 1):
-        path = generate_step_visual(step, i)
-        click.echo(f"{i}. {path or '(no image)'}")
+    visuals = []
+    if steps:
+        for idx, step in enumerate(steps, 1):
+            try:
+                path = generate_step_visual(step, idx)
+                visuals.append(path if path else "")
+            except Exception:
+                visuals.append("")
 
-    click.echo("\n=== 📦 METADATA ===")
-    meta = {k: v for k, v in result.items() if k not in ("summary", "steps")}
-    click.echo(json.dumps(meta, indent=2))
-
-    # ---------- find a pro if needed ----------
+    contractors = []
+    lat, lng = None, None
     if result.get("needs_pro"):
-        # 1. figure out (lat,lng)
         if location:
             lat, lng = (
                 parse_location_string(location) if "," in location and location.count(",") == 1
                 else geocode(location)
             )
-            src = "CLI arg"
         else:
             got = get_location()
-            if not got:
-                click.secho(
-                    "⚠️  Couldn’t auto-detect location – re-run with --location.", fg="yellow"
-                )
-                return
-            lat, lng = got
-            src = "IP geolocation"
+            if got:
+                lat, lng = got
+        if lat is not None and lng is not None:
+            place_type = choose_place_type(result.get("summary", ""))
+            found_pros = find_nearby_pros(place_type, lat, lng, radius)
+            contractors = [
+                {
+                    "name": p.get("name", ""),
+                    "rating": p.get("rating", ""),
+                    "address": p.get("vicinity", ""),
+                    "distance_km": p.get("distance_km", ""),
+                    "maps_url": p.get("maps_url", "")
+                }
+                for p in found_pros
+            ]
 
-        click.echo(f"\n📍 Using {src}: {lat:.4f}, {lng:.4f}")
-
-        place_type = choose_place_type(result["summary"])
-        pros = find_nearby_pros(place_type, lat, lng, radius)
-
-        click.echo(f"\n=== 👷  {place_type.replace('_',' ').title()}s Nearby ===")
-        if not pros:
-            click.echo("No matching contractors found.")
-        for p in pros:
-            click.echo(f"• {p['name']}  ⭐ {p['rating']}  – {p['vicinity']} ({p['distance_km']:.2f} km away)")
-            click.echo(f"  {p['maps_url']}")
-
-    # ---------- find parts if needed ----------
-    if result.get("parts_needed"):
-        click.echo("\n=== 🛒 PARTS SHOPPING ===")
+    products = []
+    if result.get("parts_needed") and lat is not None and lng is not None:
         for part in result["parts_needed"]:
-            click.echo(f"\n🔹 Looking for: {part}")
-            found = search_products(part, lat, lng)  # 🛠 changed function to pass lat,lng
-            if not found:
-                click.echo("No products found.")
-                continue
-            for p in found:
-                click.echo(f"• {p['title']}")
-                click.echo(f"  💵 {p['price']}    ⭐ {p['rating']}    🛒 {p['store']}")
-                click.echo(f"  📍 {p['distance_km']} km away")
-                click.echo(f"  🔗 {p['link']}\n")
+            found_products = search_products(part, lat, lng)
+            for p in found_products:
+                products.append({
+                    "product_name": part,
+                    "title": p.get("title", ""),
+                    "price": p.get("price", ""),
+                    "rating": p.get("rating", ""),
+                    "store": p.get("store", ""),
+                    "distance_km": p.get("distance_km", ""),
+                    "link": p.get("link", "")
+                })
+
+    output = {
+        "summary": [summary] if summary else [],
+        "repair_steps": steps if steps else [],
+        "step_visuals": visuals if visuals else [],
+        "metadata": metadata if metadata else {},
+        "contractors_nearby": contractors if contractors else [],
+        "products_needed": products if products else []
+    }
+
+    print(json.dumps(output, indent=2))
 
 if __name__ == "__main__":
     main()
